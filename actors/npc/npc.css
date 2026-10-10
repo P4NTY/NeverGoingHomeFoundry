@@ -1,0 +1,18 @@
+.Npc.actor {
+    section.npc_stats {
+        display: grid;
+        grid-template-areas: ". .";
+
+        * {
+            border-bottom: 1px dashed;
+        }
+        h4 {
+            margin-top: 7px;
+        }
+        input {
+            background: transparent;
+            font-family: "Special Elite", system-ui;
+            font-size: 20px;
+        }
+    }
+}

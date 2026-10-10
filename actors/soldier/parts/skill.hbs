@@ -1,0 +1,33 @@
+<div class="skill" data-item-id="{{_id}}">
+    <div>
+        <button data-action="knowSwitch">
+            <input
+                type="checkbox"
+                name="system.isKnow"
+                {{#if system.isKnow}}checked{{/if}}
+            >
+            {{#if system.isKnow}}
+            <i class="fa-solid fa-star"></i>
+            {{else}}
+            <i class="fa-light fa-star"></i>
+            {{/if}}
+        </button>
+        <button data-action="rollAction">
+            <b>{{name}}</b> ( {{system.stat}}; {{system.short}} )
+        </button>
+    </div>
+    <div>
+        <button class="tracker" data-action="levelSkill">
+            {{{loopTrack 0 system.level.max system.level.curr "{{_id}}" "desc"}}}
+        </button>
+        <div class="act">
+            <button data-action="editItem"><i class="fa-solid fa-pen-nib"></i></button>
+            <button data-action="removeItem"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+    </div>
+    {{#if system.details}}
+    <div class="pop">
+        {{{system.details}}}
+    </div>
+    {{/if}}
+</div>

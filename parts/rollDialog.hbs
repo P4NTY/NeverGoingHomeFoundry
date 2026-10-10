@@ -1,0 +1,18 @@
+<div class="roll">
+    <div class="before">
+        <div class="pool">
+            <div class="dices" data-action="checkDicePool">
+                <p>Atrybut i wyszkolenie:</p>
+                {{{loopTrack 0 pool 0 "diceArr" "desc"}}}
+            </div>
+            <div class="cards">
+                {{#each cards as |card|}}
+                    <label data-action="checkDicePool" >
+                        <input type="checkbox" name="card" value="{{card.id}}" />
+                        {{> "systems/never-going-home/actors/soldier/parts/card.hbs" card}}
+                    </label>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</div>

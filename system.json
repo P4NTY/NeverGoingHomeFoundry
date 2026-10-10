@@ -1,0 +1,44 @@
+{
+  "id": "never-going-home",
+  "title": "Never Going Home",
+  "description": "Never Going Home VTT",
+  "authors": [
+    {
+      "name": "Kiszu",
+      "discord": "2137",
+      "url": "https://github.com/P4NTY/"
+    }
+  ],
+  "version": "0.1",
+  "compatibility": {
+    "minimum": 13,
+    "verified": 13,
+    "maximum": 14
+  },
+  "esmodules": [ "main.js" ],
+  "styles": ["main.css" ],
+  "documentTypes": {
+    "Actor": {
+      "soldier": {},
+      "npc": {}
+    },
+    "Item": {
+      "skill": {},
+      "gear": {}
+    }
+  },
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json",
+      "flags": {}
+    },
+    {
+      "lang": "pl",
+      "name": "Polski",
+      "path": "lang/pl.json",
+      "flags": {}
+    }
+  ]
+}

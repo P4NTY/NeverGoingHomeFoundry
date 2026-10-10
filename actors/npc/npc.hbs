@@ -1,0 +1,184 @@
+<div style="--ruin: 5">
+    <div>
+        <section class="stats">
+            <h3>
+                {{localize 'stats.npcName'}}
+                <label> 
+                    <input
+                        type="checkbox"
+                        name="system.isLocked"
+                        {{#if system.isLocked}}checked{{/if}}
+                    />
+                    {{#if system.isLocked}}
+                    <i class="fa-solid fa-lock"></i>
+                    {{else}}
+                    <i class="fa-solid fa-lock-open"></i>
+                    {{/if}}
+                </label>
+            </h3>
+            <ul>
+                <li>
+                    <div>
+                        <h4>{{localize 'stats.brawn.name'}}</h4>
+                        <p>{{localize 'stats.brawn.desc'}}</p>
+                        <input type="number" name="system.stats.Krzepa.temp" value={{system.stats.Krzepa.temp}}>
+                    </div>
+                    {{#if system.isLocked}}
+                    <div class="curr">
+                        <label>
+                            <input
+                                type="radio"
+                                name="system.stats.Krzepa.curr"
+                                value="0"
+                                {{#if (isEqual system.stats.Krzepa.curr 0)}}checked{{/if}}
+                            >
+                            <i class="fa-solid fa-skull"></i>
+                        </label>
+                        {{{loopTrack 1 system.stats.Krzepa.orgin system.stats.Krzepa.curr "system.stats.Krzepa.curr" "desc"}}}
+                    </div>
+                    {{/if}}
+                    <div class="orgin {{#if system.isLocked}}disabled{{/if}}">
+                        {{{loopTrack 0 system.stats.Krzepa.max system.stats.Krzepa.orgin "system.stats.Krzepa.orgin" "desc"}}}
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <h4>{{localize 'stats.smarts.name'}}</h4>
+                        <p>{{localize 'stats.smarts.desc'}}</p>
+                        <input type="number" name="system.stats.Spryt.temp" value={{system.stats.Spryt.temp}}>
+                    </div>
+                    {{#if system.isLocked}}
+                    <div class="curr">
+                        <label>
+                            <input
+                                type="radio"
+                                name="system.stats.Spryt.curr"
+                                value="0"
+                                {{#if (isEqual system.stats.Spryt.curr 0)}}checked{{/if}}
+                            >
+                            <i class="fa-solid fa-skull"></i>
+                        </label>
+                        {{{loopTrack 1 system.stats.Spryt.orgin system.stats.Spryt.curr "system.stats.Spryt.curr" "desc"}}}
+                    </div>
+                    {{/if}}
+                    <div class="orgin {{#if system.isLocked}}disabled{{/if}}">
+                        {{{loopTrack 0 system.stats.Spryt.max system.stats.Spryt.orgin "system.stats.Spryt.orgin" "desc"}}}
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <h4>{{localize 'stats.guts.name'}}</h4>
+                        <p>{{localize 'stats.guts.desc'}}</p>
+                        <input type="number" name="system.stats.Hart.temp" value={{system.stats.Hart.temp}}>
+                    </div>
+                    {{#if system.isLocked}}
+                    <div class="curr">
+                        <label>
+                            <input
+                                type="radio"
+                                name="system.stats.Hart.curr"
+                                value="0"
+                                {{#if (isEqual system.stats.Hart.curr 0)}}checked{{/if}}
+                            >
+                            <i class="fa-solid fa-skull"></i>
+                        </label>
+                        {{{loopTrack 1 system.stats.Hart.orgin system.stats.Hart.curr "system.stats.Hart.curr" "desc"}}}
+                    </div>
+                    {{/if}}
+                    <div class="orgin {{#if system.isLocked}}disabled{{/if}}">
+                        {{{loopTrack 0 system.stats.Hart.max system.stats.Hart.orgin "system.stats.Hart.orgin" "desc"}}}
+                    </div>
+                </li>
+            </ul>
+        </section>
+        <section class="story">
+            <div
+                class="picture"
+                style="background-image: url({{actor.img}});"
+            >
+                <img
+                    src="{{actor.img}}"
+                    title="{{actor.name}}"
+                    data-action="editImage"
+                    data-edit="img"
+                />
+            </div>
+            <div class="about">
+                <p><b>{{localize 'sheet.npcName'}}:</b><input
+                name="name"
+                type="text"
+                placeholder="Name"
+                value="{{actor.name}}"
+                /></p>
+                <prose-mirror
+                    name="system.story"
+                    button="false"
+                    editable="{{editable}}"
+                    toggled="true"
+                    value="{{system.story}}"
+                >{{{system.story}}}
+                </prose-mirror>
+            </div>
+        </section>
+        <section class="gear">
+            <h3>
+                {{localize 'sheet.eq'}}
+                <button data-action="addGear">
+                    <i class="fa-solid fa-plus"></i>
+                </button>
+            </h3>
+            <div>
+                <p>{{localize 'sheet.fist'}}</p>
+                {{#if (isBigger system.stats.Krzepa.curr 7)}}
+                <p>2 {{localize 'sheet.dmg'}}</p>
+                {{else}}{{#if (isBigger system.stats.Krzepa.curr 3)}}
+                <p>1 {{localize 'sheet.dmg'}}</p>
+                {{else}}
+                <p>0 {{localize 'sheet.dmg'}}</p>
+                {{/if}}{{/if}}
+                <p>+1 {{localize 'sheet.dmg'}} (2)</p>
+            </div>
+            {{#each gears as |gear|}}
+                {{> "systems/never-going-home/actors/soldier/parts/gear.hbs" gear}}
+            {{/each}}
+        </section>
+    </div>
+    <div>
+        <section class="npc_stats">
+            <h4>{{localize 'card.init'}}: </h4>
+            <input type="text" name="system.initiative" value="{{system.initiative}}">
+            <h4>{{localize 'sheet.armor'}}: </h4>
+            <input type="text" name="system.armor" value="{{system.armor}}">
+            <h4>{{localize 'sheet.rewards'}}: </h4>
+            <input type="text" name="system.reward" value="{{system.reward}}">
+        </section>
+        <section>
+            <h3>{{localize 'sheet.weaknes'}}</h3>
+            <prose-mirror
+                name="system.weaks"
+                button="false"
+                editable="{{editable}}"
+                toggled="true"
+                value="{{system.weaks}}"
+            >{{{system.weaks}}}
+            </prose-mirror>
+        </section>
+        <section class="skills">
+            <h3>{{localize 'skills.npcName'}}</h3>
+            {{#each skills as |skill|}}
+                {{> "systems/never-going-home/actors/soldier/parts/skill.hbs" skill}}
+            {{/each}}
+            <button data-action="addSkill">
+                <i class="fa-solid fa-plus"></i>
+                <p>{{localize 'sheet.addSkill'}}</p>
+            </button>
+        </section>
+    </div>
+    <section class="cards">
+        <h3>{{localize 'sheet.cards'}}</h3>
+        {{#each system.cards as |card|}}
+            {{> "systems/never-going-home/actors/soldier/parts/card.hbs" card}}
+        {{/each}}
+        <button data-action="draw">{{localize 'card.draw'}}</button>
+    </section>
+</div>

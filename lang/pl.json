@@ -1,0 +1,79 @@
+{
+    "card": {
+        "init": "Inicjatywa",
+        "discard": "Odrzuć",
+        "draw": "Dobierz Kartę"
+    },
+    "stats": {
+        "soldierName": "Rekrutacja",
+        "npcName": "Atrybuty",
+        "brawn": {
+            "name": "Krzepa",
+            "desc": "Siła, Zwinność, Szybkość"
+        },
+        "smarts": {
+            "name": "Spryt",
+            "desc": "Pamięć, Nauka, Zmysły"
+        },
+        "guts": {
+            "name": "Hart",
+            "desc": "Odwaga, Wytrzymałość, Emocje"
+        }
+    },
+    "skills": {
+        "SoliderName": "Wyszkolenie",
+        "npcName": "Umiejętności",
+        "athletics": {
+            "name": "Atletyka",
+            "short": "dźwiganie, bieganie, demolka"
+        },
+        "melee": {
+            "name": "Walka Wręcz",
+            "short": "używanie broni białej"
+        },
+        "stealth": {
+            "name": "Skradanie się",
+            "short": "ukrywanie się, ciche poruszanie"
+        },
+        "comm": {
+            "name": "Komunikacja",
+            "short": "mowa, pismo"
+        },
+        "know": {
+            "name": "Wiedza",
+            "short": "edukacja"
+        },
+        "mechs": {
+            "name": "Mechanika",
+            "short": "użycie maszyn"
+        },
+        "invest": {
+            "name": "Śledztwo",
+            "short": "szukanie odpowiedzi"
+        },
+        "ranged": {
+            "name": "Walka Dystansowa",
+            "short": "broń palna i rzucana"
+        },
+        "transport": {
+            "name": "Transport",
+            "short": "prowadzenie pojazdów"
+        }
+    },
+    "sheet": {
+        "npcName": "Nazwa",
+        "soldierName": "Imię",
+        "eq": "Przydział",
+        "ruin": "Spaczenie",
+        "addSkill": "Dodaj",
+        "cards": "Karty",
+        "armor": "Pancerz",
+        "rewards": "Nagrody",
+        "weaknes": "Słabości",
+        "dmg": "obr",
+        "fist": "Pięści",
+        "chooseAttr": "Wybierz cechę",
+        "dmgName": "Obrażenia",
+        "short": "Skrót"
+    }
+}

@@ -1,0 +1,18 @@
+<div data-item-id="{{_id}}">
+    <p>{{name}}</p>
+    <p>{{system.dmg}} obr.</p>
+    <p>{{system.gearType}}</p>
+    <div>
+        <button data-action="editItem">
+            <i class="fa-solid fa-pen-nib"></i>
+        </button>
+        <button data-action="removeItem">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+    </div>
+    {{#if system.details}}
+    <div class="pop">
+        {{{system.details}}}
+    </div>
+    {{/if}}
+</div>

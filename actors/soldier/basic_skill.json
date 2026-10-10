@@ -1,0 +1,38 @@
+[
+    {
+        "skill": "athletics",
+        "stat": "brawn"
+    },
+    {
+        "skill": "melee",
+        "stat": "brawn"
+    },
+    {
+        "skill": "stealth",
+        "stat": "brawn"
+    },
+    {
+        "skill": "comm",
+        "stat": "smarts"
+    },
+    {
+        "skill": "know",
+        "stat": "smarts"
+    },
+    {
+        "skill": "mechs",
+        "stat": "smarts"
+    },
+    {
+        "skill": "invest",
+        "stat": "guts"
+    },
+    {
+        "skill": "ranged",
+        "stat": "guts"
+    },
+    {
+        "skill": "transport",
+        "stat": "guts"
+    }
+]

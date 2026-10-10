@@ -1,0 +1,86 @@
+.soldier.actor .skill {
+    .act {
+        display: none;
+    }
+    &:nth-child(n+11) .act {
+        display: flex;
+        position: absolute;
+        bottom: 0;
+        right: 50px;
+    }
+}
+
+.roll {
+    h3 {margin: 0;color: #444;}
+
+    .cards {
+        display: flex;
+        gap: 10px;
+        justify-content: space-evenly;
+        margin: 5px;
+
+        input { display: none };
+
+        .card {
+            width: 50px;
+            font-size: large;
+            border-width: medium;
+            border-radius: 8px;
+            cursor: pointer;
+
+            p {margin-bottom: 0px;}
+        }
+
+        label:has(:checked) .card {    
+            transform: rotate(5deg);
+            opacity: 80%;
+            background: radial-gradient(circle, rgb(70 70 140) 5%, rgb(140 140 240) 100%);
+        }
+    }
+
+    .dices {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        text-align: center;
+
+        label {
+            display: block;
+            border: 1px solid;
+            min-width: 20px;
+            padding: 5px 5px 0;
+            text-align: center;
+            border-radius: 3px;
+            cursor: pointer;
+            
+            &:has(:checked) {
+                background: radial-gradient(circle, rgb(70 70 140) 5%, rgb(140 140 240) 100%);
+                color: wheat;
+            }
+        }
+        
+        input {
+            display: none;
+        }
+
+        i {
+            font-size: xxx-large;
+        }
+
+        .dice {
+            &:has(:checked) label:not(:has(:checked)) {
+                opacity: 50%;
+                pointer-events: none;
+            }
+
+            &.good {
+                color: green;
+                opacity: 80%;
+
+                label {
+                    visibility: hidden;
+                }
+            }
+        }
+    }
+}

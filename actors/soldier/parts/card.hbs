@@ -1,0 +1,23 @@
+<div data-id="{{id}}" class="card {{suit}} {{#if (isEqual value 14)}}Joker{{/if}}">
+    <p>
+        <span class="suit">
+            {{#if (isEqual suit "spades")}}♠{{/if}}
+            {{#if (isEqual suit "hearts")}}♥{{/if}}
+            {{#if (isEqual suit "clubs")}}♣{{/if}}
+            {{#if (isEqual suit "diamonds")}}♦{{/if}}
+        </span>
+        <span class="value">
+            {{#if (isEqual value 1)}}A
+            {{else}}{{#if (isEqual value 11)}}J
+            {{else}}{{#if (isEqual value 12)}}Q
+            {{else}}{{#if (isEqual value 13)}}K
+            {{else}}{{#if (isEqual value 14)}}Joker
+            {{else}}{{value}}
+            {{/if}}{{/if}}{{/if}}{{/if}}{{/if}}
+        </span>
+    </p>
+    <div class="options">
+        <button data-action="cardInit">{{localize 'card.init'}}</button>
+        <button data-action="cardDiscard">{{localize 'card.discard'}}</button>
+    </div>
+</div>

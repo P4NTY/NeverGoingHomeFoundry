@@ -1,0 +1,40 @@
+<div class="roll">
+    <div class="after">
+        <div class="points">
+            <h3>Modyfikatory: <span id="pool" data-pool="{{pool}}">{{pool}}</span></h3>
+            <div class="cards">
+                {{#each cards as |card|}}
+                    <label
+                        data-action="checkCost"
+                    >
+                        <input type="checkbox" name="card" value="{{card.id}}" />
+                        {{> "systems/never-going-home/actors/soldier/parts/card.hbs" card}}
+                    </label>
+                {{/each}}
+            </div>
+        </div>
+        <div class="dices">
+            {{#each diceArr}}
+            <div data-value="{{value}}" class="dice {{#if (isBigger value 5)}}good{{/if}}">
+                <i class="fa-solid fa-dice-{{icon}}"></i>
+                {{#if (isEqual rra 'yes')}}
+                <label
+                    data-action="checkCost"
+                >
+                    <input type="checkbox" name="reRoll_{{_id}}">
+                    Przerzuć
+                </label>
+                {{/if}}
+                <label
+                    data-cost="{{cost}}"
+                    data-action="checkCost"
+                    {{#if (isLower cost pool)}}disabled{{/if}}
+                >
+                    <input type="checkbox" name="upgrade_{{_id}}">
+                    Podnieś{{#if (isBigger cost 1)}} za {{cost}}{{/if}}
+                </label>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</div>

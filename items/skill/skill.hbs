@@ -1,0 +1,35 @@
+<div>
+    <section class="header">
+        <img
+            src="{{item.img}}"
+            title="{{item.name}}"
+            data-action="editImage"
+            data-edit="img"
+        />
+        <div>
+            <h1><input
+                name="name"
+                type="text"
+                placeholder="Name"
+                value="{{item.name}}"
+            /></h1>
+            <input
+                name="system.short"
+                type="text"
+                value="{{system.short}}"
+            />
+            <select name="system.stat" value="{{system.stat}}">
+                <option value="">-- {{localize 'sheet.chooseAttr'}} --</option>
+                {{selectOptions stats selected=system.stat}}
+            </select>
+        </div>
+    </section>
+    <prose-mirror
+        name="system.details"
+        button="false"
+        editable="{{editable}}"
+        toggled="true"
+        value="{{system.details}}"
+    >{{{system.details}}}
+    </prose-mirror>
+</div>

@@ -1,0 +1,40 @@
+.item {
+    font-family: "Special Elite", system-ui;
+    background: url('/systems/never-going-home/assets/bg_1.png');
+    color: #444;
+    h1 > input {
+        height: 110%;
+        font-family: "Special Elite", system-ui;
+        font-size: 20px;
+    }
+    .header {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        
+    
+        img {
+            max-width: 100px;
+            border: 2px dashed;
+            cursor: pointer;
+            height: 100px;
+        }
+
+        section {
+            width: stretch;
+        }
+    }
+
+    label {
+        display: flex;
+        align-items: center;
+        width: 100%;
+    }
+    
+    select,
+    input {
+        background: transparent;
+        color: #444;
+        border-bottom: 2px dashed;
+    }
+}

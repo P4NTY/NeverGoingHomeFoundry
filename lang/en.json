@@ -1,0 +1,79 @@
+{
+    "card": {
+        "init": "Initiative",
+        "discard": "Discard",
+        "draw": "Draw Card"
+    },
+    "stats": {
+        "soldierName": "Recruitment",
+        "npcName": "Attributes",
+        "brawn": {
+            "name": "Brawn",
+            "desc": "Strength, Dexterity, Speed"
+        },
+        "smarts": {
+            "name": "Smarts",
+            "desc": "Memory, Learning, Wits"
+        },
+        "guts": {
+            "name": "Guts",
+            "desc": "Courage, Endurance, Emotions"
+        }
+    },
+    "skills": {
+        "SoliderName": "Training",
+        "npcName": "Skills",
+        "athletics": {
+            "name": "Athletics",
+            "short": "Lifts, Run, Smash"
+        },
+        "melee": {
+            "name": "Melee",
+            "short": "Hand to Hand Weapons"
+        },
+        "stealth": {
+            "name": "Stealth",
+            "short": "be Quiet, stay Hidden"
+        },
+        "comm": {
+            "name": "Communications",
+            "short": "Speak, Write"
+        },
+        "know": {
+            "name": "Knowledge",
+            "short": "Book Learning"
+        },
+        "mechs": {
+            "name": "Mechanics",
+            "short": "use Machines"
+        },
+        "invest": {
+            "name": "Investigate",
+            "short": "Find Answers"
+        },
+        "ranged": {
+            "name": "Ranged",
+            "short": "use Guns, Thrown Weapons"
+        },
+        "transport": {
+            "name": "Transport",
+            "short": "Operate Vehicles"
+        }
+    },
+    "sheet": {
+        "npcName": "Name",
+        "soldierName": "Name",
+        "eq": "Equipment",
+        "ruin": "Corruption",
+        "addSkill": "Add Skill",
+        "cards": "Cards",
+        "armor": "Armor",
+        "rewards": "Rewards",
+        "weaknes": "Weakness",
+        "dmg": "dmg",
+        "fist": "Fist",
+        "chooseAttr": "Choose Attribute",
+        "dmgName": "Damage",
+        "short": "Short"
+    }
+}

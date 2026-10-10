@@ -1,0 +1,361 @@
+.actor {
+    .window-content {
+        padding: 0;
+        * { color: #444; }
+    }
+    label:has(input) { cursor: pointer; }
+    h2, h3, h4 { margin: 0; }
+    .icon.toggle { padding: 0; }
+    
+    [data-application-part="form"] {
+        background: linear-gradient(
+                rgba(255, 100, 0, 30%),
+                rgba(255, 0, 0, calc(var(--ruin)*10%))
+            ),
+            url('/systems/never-going-home/assets/bg_2.png')
+            center
+            no-repeat;
+        background-size: cover;
+        color: black;
+        DISPLAY: grid;
+        grid-template-columns: 1fr 1fr 100px;
+        padding: 10px;
+        gap: 10px;
+    }
+
+    h3, h4, .stats, .window-title {
+        font-family: "Special Elite", system-ui;
+    }
+
+    .window-title {
+        font-size: large;
+        margin-bottom: -5px;
+    }
+    
+    h3 {
+        padding: 5px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    button:not(.tracker) {
+        background: transparent;
+        border: 0px;
+
+        &:hover {
+            background: #c9593f;
+            
+            * {
+                color: wheat;
+            }
+        }
+    }
+
+    .stats {
+        input:is([type="radio"], [type="checkbox"]) {
+            display: none;
+        }
+
+        input[type="number"] {            
+            width: 50px;
+            background: silver;
+            text-align: right;
+            border: 2px dashed;
+        }
+        .curr, .orgin {
+            display: flex;
+            clip-path: var(--poly);
+
+            &.disabled label {
+                padding: 0;
+                pointer-events: none;
+                background: color-mix(in oklab, var(--bg) 50%, black);
+            }
+        }
+
+        .curr label:first-child {
+            filter: invert(100%);
+        }
+
+        ul {
+            padding: 0;
+        }
+
+        li {
+            list-style-type: none;
+            margin: 0;
+            
+            & > div:first-child {
+                display: flex;
+                gap: 20px;
+                align-content: center;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            label {
+                --bg: #7be5b8;
+                flex-grow: 1;
+                text-align: center;
+                border: 1px solid;
+                background: var(--bg);
+                padding: 5px;
+                padding-bottom: 0;
+                
+                &:has(:checked) ~ label {
+                    --bg: #ca7171;
+                }
+            }
+        }
+    }
+    section.story {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        width: min-content;
+        min-width: 450px;
+        background: url('/systems/never-going-home/assets/bg_1.png');
+        box-shadow: 0 0 5px black;
+        position: relative;
+        transform: rotate(2deg);
+        border: 4px solid hsl(from brown h s 30%);
+        border-radius: 2px;
+        margin-bottom: 10px;
+        padding: 10px 0;
+        color: #444;
+        font-size: 18px;
+        margin: auto;
+        
+        &::after{
+            content: '';
+            position: absolute;
+            top: 5px;
+            bottom: 5px;
+            left: 47%;
+            width: 1px;
+            box-shadow: 0 0 5px black;
+            background: #444;
+        }
+        
+        .picture {
+            width: 200px;
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+            border: 10px solid black;
+            border-bottom-width: 30px;
+            border-radius: 5px;
+            box-shadow: inset 0 0 50px black;
+            transform: rotate(-5deg) scale(0.8);
+            position: relative;
+            overflow: hidden;
+            
+            img {
+                width: 100%;
+                height: 100%;
+                opacity: 0;
+                cursor: pointer;
+            }
+        }
+        
+        b {
+            font-family: "Special Elite", system-ui;
+        }
+
+        .about {
+            font-size: 16px;
+            font-family: "Caveat", cursive;
+
+            prose-mirror {
+                max-height: 220px;
+            }
+            
+            & > p {
+                margin: 0;
+                border-bottom: 1px dotted #444;
+                font-optical-sizing: auto;
+    
+                &:first-child {
+                    display: flex;
+                    align-content: center;
+                    align-items: center;
+                    
+                    input {
+                        background: transparent;
+                    }
+                }
+            }
+        }
+    }
+
+    .tracker {
+        display: flex;
+        gap: 5px;
+        justify-content: center;
+
+        label {
+            display: block;
+            text-align: center;
+            width: 30px;
+            aspect-ratio: 1;
+            align-content: center;
+            font-family: "Special Elite", system-ui;
+            padding-top: 5px;
+
+            input {
+                display: none;
+            }
+        }
+    }
+
+    .ruin {
+        label {
+            border: 2px dashed;
+            background: radial-gradient(circle, rgb(142 71 71) 5%, rgb(252 70 70) 100%);
+
+            &:first-child{
+                background: radial-gradient(circle, rgb(70 70 140) 5%, rgb(140 140 240) 100%);
+                color: wheat;
+            }
+            
+            &:has([checked]) ~ label {
+                background: transparent;
+                backdrop-filter: blur(1px);
+            }
+        }
+    }
+
+    .skills {
+        display: grid;
+        gap: 10px;
+
+        .skill {
+            border-bottom: 2px dashed;
+            position: relative;
+
+            & > div {
+                display: flex;
+                justify-content: flex-start;
+            }
+
+            .act {
+                display: flex;
+                position: absolute;
+                bottom: 0;
+                right: 50px;
+            }
+        }
+
+        button {
+            background: transparent;
+            border: 0px;
+            text-align: left;
+            font-family: "Special Elite", system-ui;
+            height: auto;
+        }
+        [data-action="knowSwitch"] {
+            input {
+                display: none;
+            }
+            i {
+                text-shadow: 0 0 2px #ffbf0f;
+            }
+        }
+
+        [data-action="rollAction"] {
+            padding: 5px;
+        }
+        
+        label {
+            background: radial-gradient(circle, rgb(70 70 140) 5%, rgb(140 140 240) 100%);
+            color: #eee;
+            border-radius: 50%;
+            clip-path: polygon(3.0% 0.0%, 15.5% 15.2%, 11.0% 0.0%, 16.0% 2.0%, 30.5% 34.2%, 23.0% 2.0%, 28.0% 2.0%, 36.7% 12.2%, 35.0% 1.0%, 39.0% 3.0%, 41.0% 1.0%, 45.0% 0.0%, 32.0% 17.9%, 50.0% 2.0%, 51.7% 26.7%, 58.0% 2.0%, 60.0% 2.0%, 54.7% 31.7%, 65.0% 0.0%, 67.0% 2.0%, 69.0% 2.0%, 73.0% 1.0%, 76.0% 1.0%, 79.0% 0.0%, 82.0% 1.0%, 65.0% 10.9%, 87.0% 1.0%, 89.0% 0.0%, 61.2% 28.2%, 96.0% 0.0%, 98.0% 3.0%, 99.0% 3.0%, 92.5% 9.2%, 100.0% 11.0%, 86.2% 15.9%, 100.0% 21.0%, 83.5% 21.4%, 100.0% 32.0%, 95.5% 32.4%, 99.0% 40.0%, 86.5% 26.9%, 85.0% 35.7%, 100.0% 53.0%, 100.0% 57.0%, 82.2% 41.9%, 100.0% 64.0%, 83.0% 51.9%, 99.0% 72.0%, 70.0% 45.2%, 100.0% 79.0%, 99.0% 83.0%, 100.0% 86.0%, 82.5% 62.9%, 99.0% 94.0%, 99.0% 98.0%, 95.0% 99.0%, 88.7% 88.9%, 85.0% 81.9%, 86.0% 99.0%, 81.2% 85.9%, 77.0% 99.0%, 75.2% 79.9%, 65.7% 92.9%, 62.0% 100.0%, 55.7% 92.4%, 54.0% 99.0%, 52.2% 55.7%, 48.0% 98.7%, 43.5% 88.4%, 40.0% 98.0%, 38.0% 100.0%, 35.0% 99.0%, 38.7% 74.9%, 28.0% 99.0%, 22.0% 94.4%, 22.0% 100.0%, 19.0% 99.0%, 16.0% 100.0%, 34.7% 75.9%, 10.0% 99.0%, 22.7% 77.9%, 4.0% 99.0%, 2.0% 97.0%, 1.0% 97.0%, 0.0% 94.0%, 27.2% 68.7%, 0.0% 84.0%, 1.0% 81.0%, 16.7% 69.4%, 0.0% 71.0%, 1.0% 66.0%, 35.2% 58.9%, 0.0% 61.0%, 10.2% 48.4%, 1.0% 54.0%, 0.0% 49.0%, 39.5% 37.9%, 0.0% 40.0%, 1.0% 37.0%, 15.5% 30.7%, 1.0% 29.0%, 0.0% 23.0%, 2.0% 20.0%, 13.2% 21.4%, 1.0% 13.0%, 0.0% 10.0%, 11.5% 11.2%, 1.0% 3.0%);
+            &:first-child {
+                display: none;
+            }
+            &:has([checked]) ~ label {
+                background: radial-gradient(circle, rgb(140 70 70) 5%, rgb(70 70 70) 100%);
+                color: #444;
+            }
+        }
+    }
+
+    section.gear {
+        background: url(/ui/parchment.jpg) repeat;
+        clip-path: var(--poly);
+        padding: 0 10px;
+        
+        & > div {
+            display: grid;
+            grid-template-columns: 0.5fr 0.5fr 1fr 70px;
+            align-items: center;
+            border-bottom: 2px dashed;
+
+            & > * {
+                border-left: 2px dashed;
+                padding: 0 5px;
+            }
+
+            & > div {
+                display: flex;
+                padding: 0;
+            }
+        }
+    }
+
+    section.cards {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    button[data-action="draw"] {
+        backdrop-filter: blur(1px);
+        border: 3px dashed;
+        width: 100%;
+        height: 40px;
+    }
+
+    .card .options {
+        display: block;
+        position: absolute;
+        top: 20px;
+        background: #444;
+        border: 2px solid;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        z-index: -1;
+        left: 0;
+        transform: scale(0);
+        transition: all .2s linear;
+        width: 100px;
+
+        button {
+            color: wheat;
+            width: 100%;
+        }
+    }
+
+    div[data-item-id] {
+        position: relative;
+
+        &:hover .pop {
+            display: block;
+            bottom: 100%;
+        }
+
+        .pop {
+            display: none;
+            position: absolute;
+            bottom: 0;
+            background: #444;
+            padding: 5px;
+            width: 100%;
+            
+            * { color:  wheat; }
+        }
+    }
+}

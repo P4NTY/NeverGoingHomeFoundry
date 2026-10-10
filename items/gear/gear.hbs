@@ -1,0 +1,42 @@
+<div>
+    <section class="header">
+        <img
+            src="{{item.img}}"
+            title="{{item.name}}"
+            data-action="editImage"
+            data-edit="img"
+        />
+        <section>
+            <h1><input
+                name="name"
+                type="text"
+                placeholder="Name"
+                value="{{item.name}}"
+            /></h1>
+            <label>
+                {{localize 'sheet.dmgName'}}:
+                <input
+                    name="system.gearType"
+                    type="text"
+                    value="{{system.gearType}}"
+                />
+            </label>
+            <label>
+                {{localize 'sheet.short'}}:
+                <input
+                    name="system.dmg"
+                    type="number"
+                    value="{{system.dmg}}"
+                />
+            </label>
+        </section>
+    </section>
+    <prose-mirror
+        name="system.details"
+        button="false"
+        editable="{{editable}}"
+        toggled="true"
+        value="{{system.details}}"
+    >{{{system.details}}}
+    </prose-mirror>
+</div>
